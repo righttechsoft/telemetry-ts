@@ -1,0 +1,30 @@
+{
+  "name": "@righttechsoft/telemetry",
+  "version": "0.1.0",
+  "description": "Logs, metrics and crash capture with a disk spool, for the RightTech telemetry ingest",
+  "type": "module",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "bun": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["src", "dist"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "bun build src/index.ts --outdir dist --target node --format esm",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.4.5",
+    "typescript": "^7.0.2"
+  }
+}
